@@ -1,0 +1,50 @@
+<div class="dashboard-container-wrap">
+    <div class="dashboard-container">
+        <div class="side-container-wrap">
+            <ul class="side-container" id="mydiv">
+                <li class="listMenuChild active">Vechile</li>
+                <li class="listMenuChild">Driver</li>
+                <li class="listMenuChild">Booking</li>
+            </ul>
+
+        </div>
+        <div class="main-container-wrap">
+            <div class="main-container">
+                <div class="heading_wrap">
+                    <div class="heading">Vechile Data</div>
+                    <div class="heading">Add Vechile</div>
+                    <div class="heading">Filter</div>
+                </div>
+                <table>
+                    <tr>
+
+                        <th>Registration_No</th>
+                        <th>Model_Name</th>
+                        <th>Vehicle_Type</th>
+                        <th>Number_Of_Seat</th>
+                        <th>AC_Available</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr *ngFor="let datas of vehiclesData ;let i = index">
+                        <td>{{datas.registrationNo}}</td>
+                        <td>{{datas.modelName}}</td>
+                        <td>{{datas.vehicleType}}</td>
+                        <td>{{datas.numberOfSeat}}</td>
+                        <td>{{datas.acAvailable}}</td>
+                        <td class="edit">
+                            <mat-icon>edit</mat-icon>
+                        </td>
+                        <!--  (click)="updatevehicledata(datas) -->
+                        <td (click)="deletevehicledata(datas)">
+                            <mat-icon>delete</mat-icon>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>
